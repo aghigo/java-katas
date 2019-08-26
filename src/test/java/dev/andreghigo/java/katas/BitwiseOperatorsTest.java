@@ -4,8 +4,23 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class JavaOperatorsTest {
-    
+public class BitwiseOperatorsTest {
+    @Test
+    public void testBitwiseSignedLeftShift() {
+    	
+    }
+	
+	
+	@Test
+	public void testBitwiseSignedRightShift() {
+		byte b = 4;
+		assertEquals(b, 0b100);
+		assertEquals(b >>> 2, 0b001);
+	}
+	
+	@Test
+	public void testBitwiseUnsignedRightShift() {}
+	
     /**
      * Test the unary bitwise complement operator ~
      * 
