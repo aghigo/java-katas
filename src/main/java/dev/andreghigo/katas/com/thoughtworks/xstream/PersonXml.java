@@ -1,5 +1,8 @@
-package dev.andreghigo.java.katas.xtream;
+package dev.andreghigo.katas.com.thoughtworks.xstream;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("person")
 public final class PersonXml {
 	private final String name;
 	private final int age;

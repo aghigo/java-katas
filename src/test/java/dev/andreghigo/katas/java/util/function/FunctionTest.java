@@ -1,4 +1,4 @@
-package dev.andreghigo.java.katas.function;
+package dev.andreghigo.katas.java.util.function;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,12 +7,12 @@ import java.util.function.Function;
 import org.junit.Test;
 
 /**
- * Unit test for {@link java.util.function.Function} interface methods
+ * Unit test for the function interface {@link java.util.function.Function} use cases
  * 
  * @author andreghigo
  *
  */
-public class FunctionInterfaceTest {
+public class FunctionTest {
 	@Test
 	public void apply() {
 		Function<Integer, Integer> incrementByOne = x -> x + 1;

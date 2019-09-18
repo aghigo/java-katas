@@ -1,11 +1,11 @@
-package dev.andreghigo.java.katas.function;
+package dev.andreghigo.katas.java.util.function.consumer;
 
 import java.util.function.Consumer;
 
 import org.junit.Test;
 
 /**
- * Unit test for {@link java.util.function.Consumer}
+ * Unit test for the function interface {@link java.util.function.Consumer} use cases
  * 
  * @author andreghigo
  *
@@ -19,7 +19,7 @@ public class ConsumerTest {
 	}
 	
 	@Test(expected = NullPointerException.class)
-	public void andThenWhenPassingNullParameter() {
+	public void andThenWhenPassingNullParameterShouldThrowNullPointerException() {
 		Consumer<String> printHelloWorld = x -> System.out.println("Hello World, " + x);
 		
 		printHelloWorld.andThen(null);

@@ -1,4 +1,4 @@
-package dev.andreghigo.java.katas;
+package dev.andreghigo.katas.java.operators;
 
 import static org.junit.Assert.assertEquals;
 
@@ -56,7 +56,7 @@ public class BitwiseOperatorsTest {
         assertEquals(~l, -9);
         
         // '0b' or '0B' prefixed are needed to represent the literal in binary (Java 7+)
-        // int has 32 bits in Java
+        // int has 32 bits in Java (4 bytes)
         // ~ can be used in byte, short int and long types
         // the ~ operator returns the result as int
     }

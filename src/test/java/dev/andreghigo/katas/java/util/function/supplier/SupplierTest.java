@@ -1,4 +1,4 @@
-package dev.andreghigo.java.katas.function;
+package dev.andreghigo.katas.java.util.function.supplier;
 
 import static org.junit.Assert.assertEquals;
 

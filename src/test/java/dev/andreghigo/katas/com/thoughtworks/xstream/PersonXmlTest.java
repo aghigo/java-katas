@@ -1,4 +1,4 @@
-package dev.andreghigo.java.katas.xstream;
+package dev.andreghigo.katas.com.thoughtworks.xstream;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import com.thoughtworks.xstream.XStream;
 
-import dev.andreghigo.java.katas.xtream.PersonXml;
+import dev.andreghigo.katas.com.thoughtworks.xstream.PersonXml;
 
 public class PersonXmlTest {
 	private XStream xStream;
@@ -15,6 +15,7 @@ public class PersonXmlTest {
 	@Before
 	public void setUpXStream() {
 		xStream = new XStream();
+		xStream.processAnnotations(PersonXml.class);
 	}
 	
 	@Test

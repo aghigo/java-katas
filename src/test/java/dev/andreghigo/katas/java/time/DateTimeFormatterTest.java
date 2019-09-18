@@ -1,4 +1,4 @@
-package dev.andreghigo.java.katas;
+package dev.andreghigo.katas.java.time;
 
 import static org.junit.Assert.assertEquals;
 

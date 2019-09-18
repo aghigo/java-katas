@@ -1,4 +1,4 @@
-package dev.andreghigo.java.katas.function;
+package dev.andreghigo.katas.java.util.function.predicate;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 import org.junit.Test;
 
 /**
- * Unit tests for studying {@link java.util.function.Predicate}
+ * Unit tests for {@link java.util.function.Predicate} use cases
  * 
  * @author andreghigo
  *
@@ -74,5 +74,13 @@ public class PredicateTest {
 		
 		assertFalse(isEqual.test(2));
 		assertTrue(isEqual.test(1));
+	}
+	
+	@Test
+	public void isEqualWhenPassingNull() {
+		Predicate<Integer> isEqual = Predicate.isEqual(null);
+		
+		assertTrue(isEqual.test(null));
+		assertFalse(isEqual.test(1));
 	}
 }
