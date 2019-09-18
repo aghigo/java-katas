@@ -31,6 +31,11 @@ public class BitwiseOperatorsTest {
      */
     @Test
     public void testUnaryBitwiseComplementOperator() {
+    	// '0b' or '0B' prefixed are needed to represent the literal in binary (Java 7+)
+        // int has 32 bits in Java (4 bytes)
+        // ~ can be used in byte, short int and long types
+        // the ~ operator returns the result as int, so it needs downcasting for byte and short assignments
+    	
         byte b = 8;
         assertEquals(b, 0b1000);
         assertEquals(b, 0b00000000000000000000000000001000);
@@ -49,15 +54,10 @@ public class BitwiseOperatorsTest {
         assertEquals(~i, 0b11111111111111111111111111110111);
         assertEquals(~i, -9);
         
-        long l = 8;
+        long l = 8;     
         assertEquals(l, 0b1000);
         assertEquals(l, 0b00000000000000000000000000001000);
         assertEquals(~l, 0b11111111111111111111111111110111);
         assertEquals(~l, -9);
-        
-        // '0b' or '0B' prefixed are needed to represent the literal in binary (Java 7+)
-        // int has 32 bits in Java (4 bytes)
-        // ~ can be used in byte, short int and long types
-        // the ~ operator returns the result as int
     }
 }

@@ -15,6 +15,7 @@ import org.junit.Test;
 public class FunctionTest {
 	@Test
 	public void apply() {
+		// The return type is the last generic type (the second in this case)
 		Function<Integer, Integer> incrementByOne = x -> x + 1;
 		
 		final int x = 5;
@@ -22,6 +23,13 @@ public class FunctionTest {
 		int y = incrementByOne.apply(x);
 		
 		assertEquals(x + 1, y);
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void andThenWhenPassingNull() {
+		Function<Integer, Integer> incrementByOne = x -> x + 1;
+		
+		incrementByOne.andThen(null);
 	}
 	
 	@Test
@@ -34,6 +42,13 @@ public class FunctionTest {
 		int result = andThen.apply(3);
 		
 		assertEquals(1, result);
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void composeWhenPassingNull() {
+		Function<Integer, Integer> incrementByOne = x -> x + 1;
+		
+		incrementByOne.compose(null);
 	}
 	
 	@Test
@@ -52,8 +67,10 @@ public class FunctionTest {
 	public void identity() {
 		Function<String, String> identity = Function.identity();
 		
-		String result = identity.apply("e");
+		final String value = "e";
 		
-		assertEquals("e", result);
+		String result = identity.apply(value);
+		
+		assertEquals(value, result);
 	}
 }

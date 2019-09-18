@@ -32,6 +32,13 @@ public class PredicateTest {
 		assertTrue(isNotEven.test(3));
 	}
 	
+	@Test(expected = NullPointerException.class)
+	public void andPassingNull() {
+		Predicate<Integer> isDivisibleByTwo = x -> x % 2 == 0;
+		
+		isDivisibleByTwo.and(null);
+	}
+	
 	@Test
 	public void and() {
 		Predicate<Integer> isDivisibleByTwo = x -> x % 2 == 0;
@@ -52,6 +59,13 @@ public class PredicateTest {
 		assertTrue(isDivisibleByTwoAndFive.test(50));
 	}
 	
+	@Test(expected = NullPointerException.class)
+	public void orPassingNull() {
+		Predicate<Integer> isEven = x -> x % 2 == 0;
+		
+		isEven.or(null);
+	}
+	
 	@Test
 	public void or() {
 		Predicate<Integer> isEven = x -> x % 2 == 0;
@@ -69,18 +83,18 @@ public class PredicateTest {
 	}
 	
 	@Test
-	public void isEqual() {
-		Predicate<Integer> isEqual = Predicate.isEqual(1);
-		
-		assertFalse(isEqual.test(2));
-		assertTrue(isEqual.test(1));
-	}
-	
-	@Test
 	public void isEqualWhenPassingNull() {
 		Predicate<Integer> isEqual = Predicate.isEqual(null);
 		
 		assertTrue(isEqual.test(null));
 		assertFalse(isEqual.test(1));
+	}
+	
+	@Test
+	public void isEqual() {
+		Predicate<Integer> isEqual = Predicate.isEqual(1);
+		
+		assertFalse(isEqual.test(2));
+		assertTrue(isEqual.test(1));
 	}
 }

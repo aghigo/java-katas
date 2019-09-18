@@ -19,7 +19,7 @@ public class ConsumerTest {
 	}
 	
 	@Test(expected = NullPointerException.class)
-	public void andThenWhenPassingNullParameterShouldThrowNullPointerException() {
+	public void andThenWhenPassingNull() {
 		Consumer<String> printHelloWorld = x -> System.out.println("Hello World, " + x);
 		
 		printHelloWorld.andThen(null);
