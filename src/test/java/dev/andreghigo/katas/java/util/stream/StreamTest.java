@@ -1,11 +1,15 @@
 package dev.andreghigo.katas.java.util.stream;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.junit.Test;
 
 public class StreamTest {
-	/**
+	/**	
 	 * The peek method of interface Stream performs an action on each element of the stream 
 	 */
 	@Test
@@ -39,10 +43,22 @@ public class StreamTest {
 	 * 
 	 */
 	@Test
-	public void map() {}
+	public void map() {
+		Stream<String> stream = Stream.of("2", "z", "A");
+		
+		List<String> values = stream
+				.map(x -> x + "ABC")
+				.collect(Collectors.toList());
+		
+		assertEquals("2ABC", values.get(0));
+		assertEquals("zABC", values.get(1));
+		assertEquals("AABC", values.get(2));
+	}
 	
 	@Test
-	public void mapToInt() {}
+	public void mapToInt() {
+
+	}
 	
 	@Test
 	public void mapToLong() {}
