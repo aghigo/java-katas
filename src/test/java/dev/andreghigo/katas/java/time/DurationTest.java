@@ -33,8 +33,32 @@ public class DurationTest {
 	
 	@Test
 	public void parse_passingValidStringFormats() {
+		// Duration of 1 day
+		Duration duration = Duration.parse("P1D");
+		assertEquals(86400, duration.getSeconds());
+		
+		// Duration of 1 day
+		duration = Duration.parse("P1D");
+		assertEquals(86400, duration.getSeconds());
+		assertEquals(0, duration.getNano());
+		
+		// Duration of 1 hours
+		duration = Duration.parse("PT1H");
+		assertEquals(3600, duration.getSeconds());
+		assertEquals(0, duration.getNano());
+		
+		// Duration of 1 minute
+		duration = Duration.parse("PT1M");
+		assertEquals(60, duration.getSeconds());
+		assertEquals(0, duration.getNano());
+		
+		// Duration of 10 seconds
+		duration = Duration.parse("PT10S");
+		assertEquals(10, duration.getSeconds());
+		assertEquals(0, duration.getNano());
+		
 		// Duration of 2 seconds
-		Duration duration = Duration.parse("PT2S");
+		duration = Duration.parse("PT2S");
 		assertEquals(2, duration.getSeconds());
 		assertEquals(0, duration.getNano());
 		
@@ -88,15 +112,14 @@ public class DurationTest {
 		assertEquals(2, duration.getSeconds());
 		assertEquals(100000000, duration.getNano());
 		
-		// the factional part can have zero digits, with only the separator .
+		// the fractional part can have zero digits, with only the separator .
 		duration = Duration.parse("PT2.S");
 		assertEquals(2, duration.getSeconds());
 		assertEquals(0, duration.getNano());
 		
-		// the factional part can have zero digits, with only the separator ,
+		// the fractional part can have zero digits, with only the separator ,
 		duration = Duration.parse("PT2,S");
 		assertEquals(2, duration.getSeconds());
 		assertEquals(0, duration.getNano());
 	}
-
 }
