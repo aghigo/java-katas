@@ -131,7 +131,7 @@ public class StreamTest {
 	public void generate() {
 		Stream<Integer> randomNumbers = Stream.generate(() -> new Random().nextInt());
 		
-		randomNumbers.limit(Long.MAX_VALUE).forEach(System.out::println);
+		randomNumbers.limit(10000).forEach(System.out::println);
 	}
 	
 	@Test

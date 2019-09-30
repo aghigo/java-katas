@@ -12,7 +12,7 @@ public class DoubleConsumerTest {
 		printDoubleValue.accept(3.343);
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void andThenWhenPassingNull() {
 		DoubleConsumer printDoubleValue = System.out::println;
 		
