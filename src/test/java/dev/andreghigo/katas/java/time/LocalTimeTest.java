@@ -2,7 +2,12 @@ package dev.andreghigo.katas.java.time;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.junit.Test;
@@ -91,5 +96,30 @@ public class LocalTimeTest {
 		assertEquals(59, localTime.getMinute());
 		assertEquals(59, localTime.getSecond());
 		assertEquals(999999999, localTime.getNano());
+	}
+	
+	@Test
+	public void testingPlayground() {
+		int year = 2019;
+		int month = 1;
+		int dayOfMonth = 10;
+		int hour = 23;
+		int minute = 59;
+		int second = 59;
+		int nanoOfSecond = 999999999;
+		
+		LocalDate date = LocalDate.of(year, month, dayOfMonth);
+		LocalTime time = LocalTime.of(hour, minute, second, nanoOfSecond);
+		LocalDateTime localDateTime = LocalDateTime.of(date, time);
+		ZoneId zone = ZoneId.of("UTC-3");
+		ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, zone);
+		Instant instant = Instant.ofEpochSecond(zonedDateTime.toEpochSecond());
+		
+		System.out.println("LocalTime = " + time);
+		System.out.println("LocalDate = " + date);
+		System.out.println("LocalDateTime = " + localDateTime);
+		System.out.println("ZoneId = " + zone);
+		System.out.println("ZonedDateTime = " + zonedDateTime);
+		System.out.println("Instant = " + instant);
 	}
 }

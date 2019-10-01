@@ -3,6 +3,8 @@ package dev.andreghigo.katas.java.time;
 import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import org.junit.Test;
@@ -142,5 +144,60 @@ public class LocalDateTest {
 		assertEquals(2019, localDate.getYear());
 		assertEquals(12, localDate.getMonthValue());
 		assertEquals(31, localDate.getDayOfMonth());
+	}
+	
+	@Test
+	public void waysToConvertLocalDateIntoLocalDateTime() {
+		int year = 2019;
+		int month = 2;
+		int dayOfMonth = 20;
+		
+		LocalDate localDate = LocalDate.of(year, month, dayOfMonth);
+		
+		LocalDateTime localDateTime = localDate.atStartOfDay();
+		assertEquals(year, localDateTime.getYear());
+		assertEquals(month, localDateTime.getMonthValue());
+		assertEquals(dayOfMonth, localDateTime.getDayOfMonth());
+		assertEquals(0, localDateTime.getHour());
+		assertEquals(0, localDateTime.getMinute());
+		assertEquals(0, localDateTime.getSecond());
+		assertEquals(0, localDateTime.getNano());
+		
+		LocalTime localTime = LocalTime.MAX;
+		localDateTime = localDate.atTime(localTime);
+		assertEquals(year, localDateTime.getYear());
+		assertEquals(month, localDateTime.getMonthValue());
+		assertEquals(dayOfMonth, localDateTime.getDayOfMonth());
+		assertEquals(23, localDateTime.getHour());
+		assertEquals(59, localDateTime.getMinute());
+		assertEquals(59, localDateTime.getSecond());
+		assertEquals(999999999, localDateTime.getNano());
+		
+		localDateTime = localDate.atTime(2, 30);
+		assertEquals(year, localDateTime.getYear());
+		assertEquals(month, localDateTime.getMonthValue());
+		assertEquals(dayOfMonth, localDateTime.getDayOfMonth());
+		assertEquals(2, localDateTime.getHour());
+		assertEquals(30, localDateTime.getMinute());
+		assertEquals(0, localDateTime.getSecond());
+		assertEquals(0, localDateTime.getNano());
+		
+		localDateTime = localDate.atTime(23, 59, 59);
+		assertEquals(year, localDateTime.getYear());
+		assertEquals(month, localDateTime.getMonthValue());
+		assertEquals(dayOfMonth, localDateTime.getDayOfMonth());
+		assertEquals(23, localDateTime.getHour());
+		assertEquals(59, localDateTime.getMinute());
+		assertEquals(59, localDateTime.getSecond());
+		assertEquals(0, localDateTime.getNano());
+		
+		localDateTime = localDate.atTime(23, 59, 59, 999999999);
+		assertEquals(year, localDateTime.getYear());
+		assertEquals(month, localDateTime.getMonthValue());
+		assertEquals(dayOfMonth, localDateTime.getDayOfMonth());
+		assertEquals(23, localDateTime.getHour());
+		assertEquals(59, localDateTime.getMinute());
+		assertEquals(59, localDateTime.getSecond());
+		assertEquals(999999999, localDateTime.getNano());
 	}
 }
