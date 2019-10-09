@@ -1,6 +1,8 @@
 package dev.andreghigo.katas.java.time;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 import org.junit.Test;
 
@@ -16,8 +18,12 @@ import org.junit.Test;
  */
 public class InstantTest {
 	@Test
-	public void parse_whenPassingValidStringFormats() {
-		// TODO
+	public void convertInstantToLocalDateTime() {
+		Instant instant = Instant.now();
 		
+		LocalDateTime localDateTime = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
+		
+		System.out.println(instant);
+		System.out.println(localDateTime);
 	}
 }
