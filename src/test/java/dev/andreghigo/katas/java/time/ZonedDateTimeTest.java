@@ -53,6 +53,7 @@ public class ZonedDateTimeTest {
 		System.out.println("duration = " + durationBetweenIndiaAndUs);
 		
 		// Returns a copy of this date-time with a different time-zone,retaining the instant
+		// This method changes the time-zone and retains the instant.This normally results in a change to the local date-time. 
 		ZonedDateTime zUS2 = zIndia.withZoneSameInstant(us);
 		System.out.println("zIndia  = " + zIndia);
 		System.out.println("zIndia.toLocalDate()  = " + zIndia.toLocalDate());
