@@ -37,27 +37,27 @@ public class BitwiseOperatorsTest {
         // the ~ operator returns the result as int, so it needs downcasting for byte and short assignments
     	
         byte b = 8;
-        assertEquals(b, 0b1000);
-        assertEquals(b, 0b00000000000000000000000000001000);
-        assertEquals(~b, 0b11111111111111111111111111110111);
-        assertEquals(~b, -9);
+        assertEquals(0b1000, b);
+        assertEquals(0b00000000000000000000000000001000, b);
+        assertEquals(0b11111111111111111111111111110111, ~b);
+        assertEquals(-9, ~b);
         
         short s = 8;
-        assertEquals(s, 0b1000);
-        assertEquals(s, 0b00000000000000000000000000001000);
-        assertEquals(~s, 0b11111111111111111111111111110111);
-        assertEquals(~s, -9);
+        assertEquals(0b1000, s);
+        assertEquals(0b00000000000000000000000000001000, s);
+        assertEquals(0b11111111111111111111111111110111, ~s);
+        assertEquals(-9, ~s);
         
         int i = 8;
-        assertEquals(i, 0b1000);
-        assertEquals(i, 0b00000000000000000000000000001000);
-        assertEquals(~i, 0b11111111111111111111111111110111);
-        assertEquals(~i, -9);
+        assertEquals(0b1000, i);
+        assertEquals(0b00000000000000000000000000001000, i);
+        assertEquals( 0b11111111111111111111111111110111, ~i);
+        assertEquals(-9, ~i);
         
         long l = 8;     
-        assertEquals(l, 0b1000);
-        assertEquals(l, 0b00000000000000000000000000001000);
-        assertEquals(~l, 0b11111111111111111111111111110111);
-        assertEquals(~l, -9);
+        assertEquals(0b1000, l);
+        assertEquals(0b00000000000000000000000000001000, l);
+        assertEquals(0b11111111111111111111111111110111, ~l);
+        assertEquals(-9, ~l);
     }
 }
