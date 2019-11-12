@@ -10,7 +10,7 @@ public class ToIntFunctionTest {
 	@Test
 	public void applyAsInt() {
 		// The generic type is the argument type, the return type is int
-		// Has only applyToInt method, doest not have compose, andThen etc.
+		// Has only applyToInt method, doesn't not have compose, andThen etc.
 		// It is applyAsInt, not apply, not applyToInt 
 		ToIntFunction<String> convertStringToInt = s -> Integer.valueOf(s);
 		

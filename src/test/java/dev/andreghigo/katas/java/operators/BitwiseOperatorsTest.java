@@ -7,15 +7,14 @@ import org.junit.Test;
 public class BitwiseOperatorsTest {
     @Test
     public void testBitwiseSignedLeftShift() {
-    	
+    	// TODO
     }
-	
 	
 	@Test
 	public void testBitwiseSignedRightShift() {
 		byte b = 4;
-		assertEquals(b, 0b100);
-		assertEquals(b >>> 2, 0b001);
+		assertEquals(0b100, b);
+		assertEquals(0b001, b >>> 2);
 	}
 	
 	@Test
