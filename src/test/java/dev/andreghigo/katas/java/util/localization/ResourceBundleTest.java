@@ -83,8 +83,9 @@ public class ResourceBundleTest {
 			properties.add(key + "=" + value);
 		}
 
-		assertEquals(1, properties.size());
+		assertEquals(2, properties.size());
 		assertEquals("prop=test from ResourceBundle_fr", properties.get(0));
+		assertEquals("prop3=test3", properties.get(1));
 		assertEquals("ResourceBundle", bundle.getBaseBundleName());
 		assertEquals("fr", bundle.getLocale().toString());
 	}
@@ -101,8 +102,10 @@ public class ResourceBundleTest {
 			properties.add(key + "=" + value);
 		}
 
-		assertEquals(1, properties.size());
+		assertEquals(3, properties.size());
 		assertEquals("prop=test from ResourceBundle_en_US", properties.get(0));
+		assertEquals("prop2=test2", properties.get(1));
+		assertEquals("prop3=test3", properties.get(2));
 		assertEquals("ResourceBundle", bundle.getBaseBundleName());
 		assertEquals("en_US", bundle.getLocale().toString());
 	}
@@ -124,8 +127,9 @@ public class ResourceBundleTest {
 			properties.add(key + "=" + value);
 		}
 
-		assertEquals(1, properties.size());
+		assertEquals(2, properties.size());
 		assertEquals("prop=test from ResourceBundle_pt_BR", properties.get(0));
+		assertEquals("prop3=test3", properties.get(1));
 		assertEquals("ResourceBundle", bundle.getBaseBundleName());
 		assertEquals("pt_BR", bundle.getLocale().toString());
 	}
